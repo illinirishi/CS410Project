@@ -13,14 +13,14 @@ There are three ways in which you can access the topic modelling capabilities of
 1.	For single document analysis the console can be used to run topic modelling. 
 2.	Up to 25 documents can be analyzed using the API
 3.	For anything more than 25 documents you should have a S3 bucket set up on Amazon, which allows you to first store your pre-processed (remove background words etc, come up with a bag of words for LDA to use for topic modeling). Then a topic modelling job has to be created, Amazon Comprehend then runs the job as an asynchronous process. The output files again need a location on the S3 bucket for storage. The output is in a tar.gz format. The API needs to call a job based on its ID and receives the JSON file with the tar.gz file. 
-The outputs can be then fed as a csv data source to Tableau or Excel for further analysis. 
-Some of the constraints that were found using Amazon Comprehend are as under.
-1.	Only files in UTF-8 format are analyzed, so you need to convert some of the files to UTF-8 format before you can run the job which otherwise would fail.
-2.	Only 10 terms per topic are available. This is seen as a limitation as more words can provide more insight into the topic identification.
+The outputs can be then fed as a csv data source to Tableau or Excel for further analysis. <br>
+Some of the constraints that were found using Amazon Comprehend are as under.<br>
+1.	Only files in UTF-8 format are analyzed, so you need to convert some of the files to UTF-8 format before you can run the job which otherwise would fail.<br>
+2.	Only 10 terms per topic are available. This is seen as a limitation as more words can provide more insight into the topic identification.<br>
 
-3.	The visualizations using Tableau or Excel were found to be limiting in comparison to what could have been achieved with Gensim and LDAVis which allows for projection of results using a distance matrix.
-4.	Topic modeling in Amazon comprehend is unsupervised. 
-5.	Parameter optimization is not something that is available at this point. 
+3.	The visualizations using Tableau or Excel were found to be limiting in comparison to what could have been achieved with Gensim and LDAVis which allows for projection of results using a distance matrix.<br>
+4.	Topic modeling in Amazon comprehend is unsupervised. <br>
+5.	Parameter optimization is not something that is available at this point. <br>
 
 For Entity Identifications we have used a seperate dataset from https://data.world/jumpyaf/2013-2016-cleaned-parsed-10-k-filings-with-the-sec . </br>
 We have used data from 2013.
