@@ -10,9 +10,9 @@ Amazon comprehend uses the Lemmatization Lists Dataset by MBM which are availabl
 We have used data from 2013-2016 for TopicModeling.
 Comprehend requires that all files be in UTF-8 format only. 
 There are three ways in which you can access the topic modelling capabilities of Amazon Comprehend:
-1.	For single document analysis the console can be used to run topic modelling. 
-2.	Up to 25 documents can be analyzed using the API
-3.	For anything more than 25 documents you should have a S3 bucket set up on Amazon, which allows you to first store your pre-processed (remove background words etc, come up with a bag of words for LDA to use for topic modeling). Then a topic modelling job has to be created, Amazon Comprehend then runs the job as an asynchronous process. The output files again need a location on the S3 bucket for storage. The output is in a tar.gz format. The API needs to call a job based on its ID and receives the JSON file with the tar.gz file. 
+  a.	For single document analysis the console can be used to run topic modelling. 
+  b.	Up to 25 documents can be analyzed using the API
+  c.	For anything more than 25 documents you should have a S3 bucket set up on Amazon, which allows you to first store your pre-processed (remove background words etc, come up with a bag of words for LDA to use for topic modeling). Then a topic modelling job has to be created, Amazon Comprehend then runs the job as an asynchronous process. The output files again need a location on the S3 bucket for storage. The output is in a tar.gz format. The API needs to call a job based on its ID and receives the JSON file with the tar.gz file. 
 The outputs can be then fed as a csv data source to Tableau or Excel for further analysis. <br>
 Some of the constraints that were found using Amazon Comprehend are as under.<br>
 1.	Only files in UTF-8 format are analyzed, so you need to convert some of the files to UTF-8 format before you can run the job which otherwise would fail.<br>
