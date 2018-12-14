@@ -1,4 +1,4 @@
-# CS410Project
+# CS410 Project
 <b>Analyzing Text for Topics Modeling and Entity Identification using Amazon Comprehend using EDGAR 10-K filings.</b></br></br>
 Data for Topic Modeling has been used from https://github.com/Vaslo/CS410_Team32_FinalProj.</br>
 An excellent tutorial for Topic Analysis is available on the above site. We have taken this dataset to analyse the same using Amazon Comprehend's Topic Modelling capabilities. 
