@@ -1,1 +1,1 @@
-This folder has all the Topic Model outputs from Aamazon Comprehed Topic Modelling jobs. 
+This folder has all the Topic Model outputs from Amazon Comprehend Topic Modelling jobs. 
