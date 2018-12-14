@@ -6,7 +6,8 @@ The datasets work reasonable well in generating a Unigram Output using Comprehen
 
 Latent Dirichlet Allocation (LDA) model is used by Amazon Comprehend to determine the topics in a set of documents. It only gives out unigram topic term outputs. The text in the documents does not need to be annotated. It gives you two outputs one is the topic-terms.csv file which gives the top terms by topic according to their weight which represents a probability distribution over the words in a given topic. Comprehend only returns the top 10 words for each topic and the weights typically do not sum to 1. The number of topics can be set and you can detect up to 100 topics, the number of topics depends on the job at hand and the domain of analysis.
 The second output file is the doc-topics.csv file which lists the documents associated with a topic and the proportion of the document that is concerned with the topic. The proportion of topics in a given document sums to 1. 
-Amazon comprehend uses the Lemmatization Lists Dataset by MBM which are available at http://www.lexiconista.com/datasets/lemmatization/ .
+Amazon comprehend uses the Lemmatization Lists Dataset by MBM which are available at http://www.lexiconista.com/datasets/lemmatization/ 
+We have used data from 2013-2016 for TopicModeling.
 Comprehend requires that all files be in UTF-8 format only. 
 There are three ways in which you can access the topic modelling capabilities of Amazon Comprehend:
 1.	For single document analysis the console can be used to run topic modelling. 
@@ -22,6 +23,7 @@ Some of the constraints that were found using Amazon Comprehend are as under.
 5.	Parameter optimization is not something that is available at this point. 
 
 For Entity Identifications we have used a seperate dataset from https://data.world/jumpyaf/2013-2016-cleaned-parsed-10-k-filings-with-the-sec . </br>
+We have used data from 2013.
 We found that the Management's Discussion and Analysis section was sufficient for us to extract the Identities, we were mainly concerned about identifying key persons and events. A java extractor was used to extract the Management's discussion and Analysis section from the files cleaned-parsed 10-k filings cited above as the previous dataset only has a bag of words for LDA based topic modeling. This was considered as sufficient data for Entity Identification.
 
 Entity Detection in Amazon Comprehend can be done using the console and the API. Console allows for testing of a string of characters, such as a sentence or a paragraph or a document with 5000 characters. You can also use the API to submit a single document as a string for analysis. The API can further handle a batch of 25 documents and get the required result in a JSON format.<br> 
