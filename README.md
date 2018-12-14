@@ -6,9 +6,9 @@ The datasets work reasonably well in generating a Unigram Output using Comprehen
 
 Latent Dirichlet Allocation (LDA) model is used by Amazon Comprehend to determine the topics in a set of documents. It only gives out unigram topic term outputs. The text in the documents does not need to be annotated. It gives you two outputs one is the topic-terms.csv file which gives the top terms by topic according to their weight which represents a probability distribution over the words in a given topic. Comprehend only returns the top 10 words for each topic and the weights typically do not sum to 1. The number of topics can be set and you can detect up to 100 topics, the number of topics depends on the job at hand and the domain of analysis.
 The second output file is the doc-topics.csv file which lists the documents associated with a topic and the proportion of the document that is concerned with the topic. The proportion of topics in a given document sums to 1. 
-Amazon comprehend uses the Lemmatization Lists Dataset by MBM which are available at http://www.lexiconista.com/datasets/lemmatization/ 
-We have used data from 2013-2016 for TopicModeling.<br><br><br>
-Comprehend requires that all files be in UTF-8 format only. <br><br>
+Amazon comprehend uses the Lemmatization Lists Dataset by MBM which are available at http://www.lexiconista.com/datasets/lemmatization/ <br>
+We have used data from 2013-2016 for TopicModeling.<br>
+Comprehend requires that all files be in UTF-8 format only. <br>
 There are three ways in which you can access the topic modelling capabilities of Amazon Comprehend:<br>
   a.	For single document analysis the console can be used to run topic modelling. <br>
   b.	Up to 25 documents can be analyzed using the API<br>
