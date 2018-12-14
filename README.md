@@ -1,5 +1,5 @@
 # CS410 Project
-<b>Analyzing Text for Topics Modeling and Entity Identification using Amazon Comprehend using EDGAR 10-K filings.</b></br></br>
+<b>Analyzing Text for Topics Modeling and Entity Identification using Amazon Comprehend using EDGAR 10-K filings.</b></br>
 Data for Topic Modeling has been used from https://github.com/Vaslo/CS410_Team32_FinalProj.</br>
 An excellent tutorial for Topic Analysis is available on the above site. This is a pre processed dataset to analyse the documents using Amazon Comprehend's Topic Modelling capabilities. 
 The datasets work reasonably well in generating a Unigram Output using Comprehend. </br>
@@ -7,12 +7,12 @@ The datasets work reasonably well in generating a Unigram Output using Comprehen
 Latent Dirichlet Allocation (LDA) model is used by Amazon Comprehend to determine the topics in a set of documents. It only gives out unigram topic term outputs. The text in the documents does not need to be annotated. It gives you two outputs one is the topic-terms.csv file which gives the top terms by topic according to their weight which represents a probability distribution over the words in a given topic. Comprehend only returns the top 10 words for each topic and the weights typically do not sum to 1. The number of topics can be set and you can detect up to 100 topics, the number of topics depends on the job at hand and the domain of analysis.
 The second output file is the doc-topics.csv file which lists the documents associated with a topic and the proportion of the document that is concerned with the topic. The proportion of topics in a given document sums to 1. 
 Amazon comprehend uses the Lemmatization Lists Dataset by MBM which are available at http://www.lexiconista.com/datasets/lemmatization/ 
-We have used data from 2013-2016 for TopicModeling.
-Comprehend requires that all files be in UTF-8 format only. 
-There are three ways in which you can access the topic modelling capabilities of Amazon Comprehend:
-  a.	For single document analysis the console can be used to run topic modelling. 
-  b.	Up to 25 documents can be analyzed using the API
-  c.	For anything more than 25 documents you should have a S3 bucket set up on Amazon, which allows you to first store your pre-processed (remove background words etc, come up with a bag of words for LDA to use for topic modeling). Then a topic modelling job has to be created, Amazon Comprehend then runs the job as an asynchronous process. The output files again need a location on the S3 bucket for storage. The output is in a tar.gz format. The API needs to call a job based on its ID and receives the JSON file with the tar.gz file. 
+We have used data from 2013-2016 for TopicModeling.</br></br>
+Comprehend requires that all files be in UTF-8 format only. </br>
+There are three ways in which you can access the topic modelling capabilities of Amazon Comprehend:</br>
+  a.	For single document analysis the console can be used to run topic modelling. </br>
+  b.	Up to 25 documents can be analyzed using the API</br>
+  c.	For anything more than 25 documents you should have a S3 bucket set up on Amazon, which allows you to first store your pre-processed (remove background words etc, come up with a bag of words for LDA to use for topic modeling). Then a topic modelling job has to be created, Amazon Comprehend then runs the job as an asynchronous process. The output files again need a location on the S3 bucket for storage. The output is in a tar.gz format. The API needs to call a job based on its ID and receives the JSON file with the tar.gz file. </br>
 The outputs can be then fed as a csv data source to Tableau or Excel for further analysis. <br>
 Some of the constraints that were found using Amazon Comprehend are as under.<br>
 1.	Only files in UTF-8 format are analyzed, so you need to convert some of the files to UTF-8 format before you can run the job which otherwise would fail.<br>
